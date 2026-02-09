@@ -94,5 +94,14 @@ Estos perfiles permiten proponer estrategias diferenciadas de segmentación y fi
 ---
 
 ## 📁 Estructura del proyecto
+Clustering-y-Reducción-de-Dimensionalidad/
+├── Mall_Customers.csv
+├── semana3_Modelos_NoSupervisados.ipynb
+├── README.md
+---
+
+## Conclusiones
+El uso de modelos no supervisados permitió identificar patrones relevantes en el comportamiento de los clientes.  
+La combinación de técnicas de clustering y reducción de dimensionalidad facilita tanto la segmentación como la interpretación visual de los datos, cumpliendo con los objetivos establecidos en la práctica.
 
 
