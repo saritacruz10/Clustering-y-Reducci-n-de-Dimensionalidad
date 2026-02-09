@@ -1,19 +1,50 @@
-This directory includes a few sample datasets to get you started.
+# Clustering y Reducción de Dimensionalidad
 
-*   `california_housing_data*.csv` is California housing data from the 1990 US
-    Census; more information is available at:
-    https://docs.google.com/document/d/e/2PACX-1vRhYtsvc5eOR2FWNCwaBiKL6suIOrxJig8LcSBbmCbyYsayia_DvPOOBlXZ4CAlQ5nlDD8kTaIDRwrN/pub
+## Descripción del proyecto
+Este proyecto tiene como finalidad aplicar **modelos de aprendizaje no supervisado** para analizar y segmentar clientes a partir del conjunto de datos *Mall_Customers.csv*.  
+Se emplean técnicas de **clustering (K-Means y DBSCAN)** y **reducción de dimensionalidad (PCA y t-SNE)** con el fin de identificar patrones de comportamiento de consumo.
 
-*   `mnist_*.csv` is a small sample of the
-    [MNIST database](https://en.wikipedia.org/wiki/MNIST_database), which is
-    described at: http://yann.lecun.com/exdb/mnist/
+---
 
-*   `anscombe.json` contains a copy of
-    [Anscombe's quartet](https://en.wikipedia.org/wiki/Anscombe%27s_quartet); it
-    was originally described in
+## Dataset
+- **Nombre:** Mall_Customers.csv  
+- **Número de registros:** 200 clientes  
+- **Variables utilizadas:**
+  - `Age` (Edad)
+  - `Annual Income (k$)` (Ingreso anual)
+  - `Spending Score (1-100)` (Nivel de gasto)
 
-    Anscombe, F. J. (1973). 'Graphs in Statistical Analysis'. American
-    Statistician. 27 (1): 17-21. JSTOR 2682899.
+Las columnas `CustomerID` y `Gender` no fueron utilizadas en el modelo debido a que no aportan información numérica directa para los algoritmos de clustering aplicados.
 
-    and our copy was prepared by the
-    [vega_datasets library](https://github.com/altair-viz/vega_datasets/blob/4f67bdaad10f45e3549984e17e1b3088c731503d/vega_datasets/_data/anscombe.json).
+---
+
+## Preprocesamiento de datos
+Se realizaron las siguientes actividades:
+- Verificación de valores nulos y registros duplicados.
+- Selección de variables numéricas relevantes.
+- Eliminación de columnas no necesarias.
+- Normalización de los datos mediante **StandardScaler**, con el objetivo de evitar sesgos por diferencias de escala.
+
+---
+
+## Análisis exploratorio
+Se efectuó un análisis exploratorio inicial utilizando:
+- `head()`, `info()` y `describe()`
+- Visualización de relaciones entre variables mediante **pairplot**
+
+Este análisis permitió comprender la distribución de los datos y la relación entre edad, ingreso y nivel de gasto.
+
+---
+
+## Clustering con K-Means
+- Se aplicó el **método del codo (Elbow Method)** para determinar el número óptimo de clusters.
+- El punto de inflexión se identificó en **k = 4**.
+- Se entrenó el modelo K-Means con dicho valor y se asignó un cluster a cada cliente.
+
+**Resultado:** Se obtuvieron cuatro segmentos bien definidos de clientes con comportamientos diferenciados.
+
+---
+
+## Clustering con DBSCAN
+- Se implementó el algoritmo **DBSCAN** como método alternativo de clustering.
+- Este modelo
